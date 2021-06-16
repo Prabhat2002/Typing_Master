@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1>Typing Master</h1>
+    <p id="para">
+        A.P.J. Abdul Kalam, in full Avul Pakir Jainulabdeen Abdul Kalam, (born October 15, 1931, Rameswaram, India—died
+        July 27, 2015, Shillong), Indian scientist and politician who played a leading role in the development of
+        India’s missile and nuclear weapons programs.
+        He was president of India from 2002 to 2007.Kalam earned a degree in aeronautical engineering from the Madras
+        Institute of Technology and in 1958 joined the Defence Research and Development Organisation (DRDO).
+        In 1969 he moved to the Indian Space Research Organisation, where he was project director of the SLV-III, the
+        first satellite launch vehicle that was both designed and produced in India.
+        Rejoining DRDO in 1982, Kalam planned the program that produced a number of successful missiles, which helped
+        earn him the nickname “Missile Man.”
+        From 1992 to 1997 Kalam was scientific adviser to the defense minister, and he later served as principal
+        scientific adviser (1999–2001) to the government with the rank of cabinet minister.
+        His prominent role in the country’s 1998 nuclear weapons tests solidified India as a nuclear power and
+        established Kalam as a national hero, although the tests caused great concern in the international community.
+    </p>
+    <button id="btn1" onclick="Start()">Start</button>
+    <textarea id="text_area" rows="7" placeholder="start typing"></textarea>
+    <button id="btn2" onclick="End()">Submit</button>
+    <p id="Show"></p>
+    <script>
+        const start=0,end=0;
+        function Start() 
+        {
+           start=new Date();    
+        }
+        function End() 
+        {
+           end=new Date();              
+           var time_diff=end-start;
+           var txt = $("#text_area").val();
+           var len=txt.length;
+           var speed=len*1000/time_diff;
+           document.getElementById('Show').innerHTML=speed;     
+        }
+    </script> 
+</body>
+</html>
